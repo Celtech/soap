@@ -1,0 +1,12 @@
+{
+  "name": "@soap/backend",
+  "private": "true",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "github.com/celtech/soap",
+  "author": "Tim Hinz",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@soap/monorepo",
+  "version": "1.0.0",
+  "description": "Secure OAuth2 Authorization Provider",
+  "main": "index.js",
+  "repository": "github.com/celtech/soap",
+  "author": "Tim Hinz <timhinz16@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": ["packages/*"],
+  "devDependencies": {
+    "lerna": "^5.1.4",
+    "nx": "^14.3.6"
+  }
+}
