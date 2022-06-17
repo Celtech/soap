@@ -3,11 +3,11 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const express = require('express');
-const path = require('path');
 const history = require('connect-history-api-fallback');
+const path = require('path');
 
 const staticFileMiddleware = express.static(
-  path.join(__dirname, '../../../app/dist'),
+  path.dirname(require.resolve('@soap/app/dist/index.html')),
 );
 
 const init = (app) => {
