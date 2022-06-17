@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 const port = Number(process.env.SERVER_PORT) || 8080;
 const app = express();
 
+app.use(morgan('combined'));
 app.use(bodyParser.json());
 app.use(cors());
 app.use(helmet());
