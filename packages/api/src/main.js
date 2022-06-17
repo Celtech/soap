@@ -22,7 +22,7 @@ const server = app.listen(port, () => {
   );
 });
 
-const gracefulShutdownHandler = function gracefulShutdownHandler(signal) {
+const gracefulShutdownHandler = (signal) => {
   console.log(`🛑️️ Caught ${signal}, gracefully shutting down`);
 
   setTimeout(() => {
