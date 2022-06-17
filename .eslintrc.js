@@ -18,4 +18,12 @@ module.exports = {
     'prettier/prettier': ['error'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
   },
+  overrides: [
+    {
+      files: 'packages/api/**/*',
+      rules: {
+        'no-console': 'off',
+      },
+    },
+  ],
 };
