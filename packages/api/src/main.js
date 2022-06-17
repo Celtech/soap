@@ -8,6 +8,8 @@ const app = express();
 app.use(cors());
 app.use(helmet());
 
+app.disable('x-powered-by');
+
 const server = app.listen(port, () => {
   console.log(
     `🚀 Server started on port ${port} in ${process
