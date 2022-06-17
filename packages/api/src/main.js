@@ -1,11 +1,13 @@
 const dotenv = require('dotenv');
 const express = require('express');
 const middleware = require('./middleware');
+const router = require('./router');
 
 const app = express();
 
 dotenv.config();
 middleware.init(app);
+router.init(app);
 app.disable('x-powered-by');
 
 const port = Number(process.env.SERVER_PORT) || 8080;
