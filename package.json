@@ -12,7 +12,10 @@
   ],
   "scripts": {
     "lint:js": "eslint --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
-    "lint:fix": "eslint --ext \".js,.vue,.ts\" --fix --ignore-path .gitignore ."
+    "lint:fix": "eslint --ext \".js,.vue,.ts\" --fix --ignore-path .gitignore .",
+    "dev": "lerna run dev",
+    "build": "lerna run build",
+    "build:watch": "lerna run build"
   },
   "devDependencies": {
     "eslint": "^8.17.0",
@@ -26,6 +29,7 @@
     "eslint-plugin-vue": "^9.1.1",
     "lerna": "^5.1.4",
     "nx": "^14.3.6",
+    "open-cli": "^7.0.1",
     "prettier": "^2.7.1"
   }
 }
