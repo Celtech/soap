@@ -11,8 +11,11 @@
     "packages/*"
   ],
   "scripts": {
+    "lint": "concurrently 'yarn lint:style' 'yarn lint'",
+    "lint:fix": "concurrently 'yarn lint:style' 'yarn lint:js:fix'",
     "lint:js": "eslint --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
-    "lint:fix": "eslint --ext \".js,.vue,.ts\" --fix --ignore-path .gitignore .",
+    "lint:js:fix": "eslint --ext \".js,.vue,.ts\" --fix --ignore-path .gitignore .",
+    "lint:style": "stylelint \"**/*.{css,scss,sass,vue}\" --ignore-path .gitignore",
 
     "dev": "yarn build && concurrently 'nx run-many --target=dev --all' 'sleep 1; open-cli http://127.0.0.1:8080'",
     "build": "nx run-many --target=build --all",
@@ -37,6 +40,12 @@
     "lerna": "^5.1.4",
     "nx": "^14.3.6",
     "open-cli": "^7.0.1",
-    "prettier": "^2.7.1"
+    "postcss-html": "^1.4.1",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.9.1",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^26.0.0",
+    "stylelint-config-tailwindcss": "^0.0.3"
   }
 }
