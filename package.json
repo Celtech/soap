@@ -19,7 +19,7 @@
     "dev": "yarn build && concurrently 'nx run-many --target=dev --all' 'sleep 1; open-cli http://127.0.0.1:8080'",
     "build": "nx run-many --target=build --all",
     "build:watch": "nx run-many --target=build --all",
-    "prepare": "node ./prepare.js"
+    "prepare": "node ./.husky/prepare.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
