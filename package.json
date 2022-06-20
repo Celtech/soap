@@ -15,9 +15,12 @@
     "lint:fix": "eslint --ext \".js,.vue,.ts\" --fix --ignore-path .gitignore .",
     "dev": "yarn build && concurrently 'nx run-many --target=dev --all' 'sleep 1; open-cli http://127.0.0.1:8080'",
     "build": "nx run-many --target=build --all",
-    "build:watch": "nx run-many --target=build --all"
+    "build:watch": "nx run-many --target=build --all",
+    "prepare": "husky install"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.2",
+    "@commitlint/config-conventional": "^17.0.2",
     "concurrently": "^7.2.2",
     "eslint": "^8.17.0",
     "eslint-config-airbnb": "19.0.4",
