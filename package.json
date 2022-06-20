@@ -11,17 +11,15 @@
     "packages/*"
   ],
   "scripts": {
-    "lint": "concurrently 'yarn lint:style' 'yarn lint'",
+    "lint": "concurrently 'yarn lint:style' 'yarn lint:js:fix'",
     "lint:fix": "concurrently 'yarn lint:style' 'yarn lint:js:fix'",
     "lint:js": "eslint --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
     "lint:js:fix": "eslint --ext \".js,.vue,.ts\" --fix --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{css,scss,sass,vue}\" --ignore-path .gitignore",
-
+    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
     "dev": "yarn build && concurrently 'nx run-many --target=dev --all' 'sleep 1; open-cli http://127.0.0.1:8080'",
     "build": "nx run-many --target=build --all",
     "build:watch": "nx run-many --target=build --all",
-
-    "prepare": "husky install"
+    "prepare": "node ./prepare.js"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.2",
@@ -38,6 +36,7 @@
     "eslint-plugin-vue": "^9.1.1",
     "husky": "^8.0.1",
     "lerna": "^5.1.4",
+    "lint-staged": "^13.0.2",
     "nx": "^14.3.6",
     "open-cli": "^7.0.1",
     "postcss-html": "^1.4.1",
@@ -47,5 +46,9 @@
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard": "^26.0.0",
     "stylelint-config-tailwindcss": "^0.0.3"
+  },
+  "lint-staged": {
+    "*.{js,vue}": "yarn lint:js:fix",
+    "*.{css,scss,sass,html,vue}": "yarn lint:style"
   }
 }
