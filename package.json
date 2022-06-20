@@ -13,11 +13,12 @@
   "scripts": {
     "lint:js": "eslint --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
     "lint:fix": "eslint --ext \".js,.vue,.ts\" --fix --ignore-path .gitignore .",
-    "dev": "lerna run dev",
-    "build": "lerna run build",
-    "build:watch": "lerna run build"
+    "dev": "yarn build && concurrently 'nx run-many --target=dev --all' 'sleep 1; open-cli http://127.0.0.1:8080'",
+    "build": "nx run-many --target=build --all",
+    "build:watch": "nx run-many --target=build --all"
   },
   "devDependencies": {
+    "concurrently": "^7.2.2",
     "eslint": "^8.17.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "^8.5.0",
