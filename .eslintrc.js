@@ -9,6 +9,9 @@ module.exports = {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
+    'tailwindcss': {
+      config: 'packages/app/tailwind.config.js',
+    },
   },
   parserOptions: {
     parser: '@babel/eslint-parser',
@@ -20,12 +23,13 @@ module.exports = {
     node: true,
   },
   extends: [
+    'plugin:tailwindcss/recommended',
     'eslint:recommended',
     'plugin:vue/vue3-recommended',
     'airbnb',
     'prettier',
   ],
-  plugins: ['prettier'],
+  plugins: ['prettier', 'tailwindcss'],
   rules: {
     'prettier/prettier': ['error'],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
