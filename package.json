@@ -48,7 +48,7 @@
     "stylelint-config-tailwindcss": "^0.0.3"
   },
   "lint-staged": {
-    "*.{js,vue}": "yarn lint:js:fix",
-    "*.{css,scss,sass,html,vue}": "yarn lint:style"
+    "*.{js,vue}": "yarn lint:js:fix --cache",
+    "*.{css,scss,sass,html,vue}": "yarn lint:style --cache"
   }
 }
