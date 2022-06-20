@@ -15,7 +15,7 @@
     "lint:fix": "concurrently 'yarn lint:style' 'yarn lint:js:fix'",
     "lint:js": "eslint --ext \".js,.vue,.ts\" --ignore-path .gitignore .",
     "lint:js:fix": "eslint --ext \".js,.vue,.ts\" --fix --ignore-path .gitignore .",
-    "lint:style": "stylelint \"**/*.{css,scss,sass,html,vue}\" --ignore-path .gitignore",
+    "lint:style": "stylelint \"**/*.{css,scss,sass,vue}\" --ignore-path .gitignore",
     "dev": "yarn build && concurrently 'nx run-many --target=dev --all' 'sleep 1; open-cli http://127.0.0.1:8080'",
     "build": "nx run-many --target=build --all",
     "build:watch": "nx run-many --target=build --all",
