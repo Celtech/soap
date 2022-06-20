@@ -28,6 +28,7 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-vue": "^9.1.1",
+    "husky": "^8.0.1",
     "lerna": "^5.1.4",
     "nx": "^14.3.6",
     "open-cli": "^7.0.1",
