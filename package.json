@@ -18,8 +18,10 @@
     "lint:style": "stylelint \"**/*.{css,scss,sass,vue}\" --ignore-path .gitignore",
     "dev": "yarn build && concurrently 'nx run-many --target=dev --all' 'sleep 1; open-cli http://127.0.0.1:8080'",
     "build": "nx run-many --target=build --all",
-    "build:watch": "nx run-many --target=build --all",
-    "prepare": "node ./.husky/prepare.js"
+    "docker:up": "cd docker && docker compose -p soap up -d --build --force-recreate",
+    "docker:down": "cd docker && docker compose -p soap down",
+    "docker:build:app": "docker build --build-arg=\"APP_PATH=app\" --target app -t registry.gitlab.com/swarmlet/swarmlet/app:latest -f docker/Vue.Dockerfile .",
+    "prepare": "test -n \"$DOCKER\" || node ./.husky/prepare.js"
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
@@ -40,6 +42,7 @@
     "husky": "^8.0.1",
     "lerna": "^5.1.4",
     "lint-staged": "^13.0.2",
+    "nodemon": "^2.0.16",
     "nx": "^14.3.6",
     "open-cli": "^7.0.1",
     "postcss-html": "^1.4.1",

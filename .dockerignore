@@ -1,0 +1,53 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.idea
+.vscode
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Cache files
+.eslintcache
+.stylelintcache
+
+# Environment
+.env
+.env.*
+
+# Markdown
+*.md
+LICENSE
+CODEOFCONDUCT
+CODEOWNERS
+
+# Project files / dirs
+.gitlab
+.github
+.browserslistrc
+.editorconfig
+.eslintignore
+.eslintrc.js
+.gitignore
+.prettierignore
+.prettierrc
+.stylelintrc.json
+commitlint.config.js
+lerna.json
+nx.json
