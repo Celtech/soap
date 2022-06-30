@@ -17,7 +17,7 @@ const init = (app) => {
     history({
       rewrites: [
         {
-          from: /^\/test\/.*$/,
+          from: /^\/api\/.*$/,
           to(context) {
             return context.parsedUrl.path;
           },
@@ -26,7 +26,7 @@ const init = (app) => {
     }),
   );
 
-  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cors());
   app.use(helmet());
 };

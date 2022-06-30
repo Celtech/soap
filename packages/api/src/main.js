@@ -1,6 +1,6 @@
 const dotenv = require('dotenv');
 const express = require('express');
-const middleware = require('./middleware');
+const middleware = require('./middlewares');
 const router = require('./router');
 
 const app = express();
